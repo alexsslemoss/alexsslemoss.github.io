@@ -16,7 +16,7 @@ export class OrdemServicoOpenComponent implements AfterViewInit {
 
   ordemServicos: OrdemServico[] = [];
 
-  displayedColumns: string[] = ['id', 'abertura', 'cliente', 'status', 'prioridade', 'tecnico', 'acoes'];
+  displayedColumns: string[] = ['id', 'abertura', 'encerramento', 'cliente', 'status', 'prioridade', 'tecnico', 'acoes'];
 
   dataSource = new MatTableDataSource<OrdemServico>(this.ordemServicos);
 

@@ -32,14 +32,14 @@ table {
   color: rgb(143, 52, 52);
 }
 
-td.baixa {
+td.baixa{
   color: green;
 }
 
-td.media {
+td.media{
   color: yellow;
 }
 
-td.alta {
+td.alta{
   color: red;
 }

@@ -1,6 +1,6 @@
 import { ClienteService } from 'src/app/services/cliente.service';
 import { OrdermServicoService } from 'src/app/services/orderm-servico.service';
-import { Component, OnInit, AfterViewInit, ViewChildren } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ViewChildren, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { OrdemServico } from 'src/app/models/orderServico';
@@ -20,7 +20,7 @@ export class OrdemServicoClosedComponent implements AfterViewInit {
 
   dataSource = new MatTableDataSource<OrdemServico>(this.ordemServicos);
 
-  @ViewChildren(MatPaginator) paginator!: MatPaginator;
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   constructor(
     private service: OrdermServicoService,
