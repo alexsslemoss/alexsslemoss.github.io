@@ -1,0 +1,53 @@
+<form class="form mat-elevation-z8">
+  
+    <h1>Atualizar Ordem de Serviço</h1>
+  
+    <mat-form-field appearance="fill">
+      <mat-label>Selecione um Cliente</mat-label>
+      <mat-select [(value)]="ordemServico.cliente">
+        <mat-option *ngFor="let cliente of clientes" value="{{ cliente.id }}">{{
+          cliente.nome
+        }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  
+    <mat-form-field appearance="fill">
+      <mat-label>Selecione o Status</mat-label>
+      <mat-select [(value)]="ordemServico.status">
+        <mat-option value="0">ABERTO</mat-option>
+        <mat-option value="1">EM ANDAMENTO</mat-option>
+        <mat-option value="2">ENDERRADO</mat-option>
+      </mat-select>
+    </mat-form-field>
+  
+    <mat-form-field appearance="fill">
+      <mat-label>Selecione a Prioridade</mat-label>
+      <mat-select [(value)]="ordemServico.prioridade">
+        <mat-option value="0">BAIXA</mat-option>
+        <mat-option value="1">MEDIA</mat-option>
+        <mat-option value="2">ALTA</mat-option>
+      </mat-select>
+    </mat-form-field>
+  
+    <mat-form-field appearance="fill">
+      <mat-label>Selecione um Técnico</mat-label>
+      <mat-select [(value)]="ordemServico.tecnico">
+        <mat-option *ngFor="let tecnico of tecnicos" value="{{ tecnico.id }}">{{
+          tecnico.nome
+        }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  
+    <mat-form-field class="full-width" appearance="fill">
+      <mat-label>Adicione as observações para a Ordem de Serviço</mat-label>
+      <textarea matInput [(ngModel)]="ordemServico.observacao" name="observacao"></textarea>
+    </mat-form-field>
+  
+    <button (click)="update()" class="mat-elevation-z8" mat-stroked-button color="accent">
+      ATUALIZAR
+    </button>
+    <button (click)="cancel()" class="mat-elevation-z8" mat-stroked-button color="warn">
+      CANCELAR
+    </button>
+  </form>
+  

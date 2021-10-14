@@ -1,0 +1,8 @@
+<div class="container">
+  <h1>Observação da Ordem de Serviço</h1>
+  <mat-card class="elevation-z8">
+    <p id="abertura">Data de Abertura: {{ ordemServico.dataAbertura }}</p>
+    <p>{{ ordemServico.observacao }}</p>
+  </mat-card>
+  <button (click)="voltar()" class="mat-elevation-z8" mat-stroked-button color="warn">VOLTAR</button>
+</div>
