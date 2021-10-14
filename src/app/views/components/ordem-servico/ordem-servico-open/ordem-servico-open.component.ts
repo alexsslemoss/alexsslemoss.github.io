@@ -1,22 +1,22 @@
-import { ClienteService } from './../../../../services/cliente.service';
-import { TecnicoService } from './../../../../services/tecnico.service';
-import { Router } from '@angular/router';
-import { OrdermServicoService } from './../../../../services/orderm-servico.service';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
-import { OrdemServico } from './../../../../models/orderServico';
 import { MatTableDataSource } from '@angular/material/table';
-import { Component, ViewChild, AfterViewInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { OrdemServico } from 'src/app/models/orderServico';
+import { ClienteService } from 'src/app/services/cliente.service';
+import { OrdermServicoService } from 'src/app/services/orderm-servico.service';
+import { TecnicoService } from 'src/app/services/tecnico.service';
 
 @Component({
-  selector: 'app-ordem-servico-read',
-  templateUrl: './ordem-servico-read.component.html',
-  styleUrls: ['./ordem-servico-read.component.css']
+  selector: 'app-ordem-servico-open',
+  templateUrl: './ordem-servico-open.component.html',
+  styleUrls: ['./ordem-servico-open.component.css']
 })
-export class OrdemServicoReadComponent implements AfterViewInit {
+export class OrdemServicoOpenComponent implements AfterViewInit {
 
   ordemServicos: OrdemServico[] = [];
 
-  displayedColumns: string[] = ['id', 'abertura', 'encerramento', 'cliente', 'status', 'prioridade', 'tecnico', 'acoes'];
+  displayedColumns: string[] = ['id', 'abertura', 'cliente', 'status', 'prioridade', 'tecnico', 'acoes'];
 
   dataSource = new MatTableDataSource<OrdemServico>(this.ordemServicos);
 
@@ -34,16 +34,16 @@ export class OrdemServicoReadComponent implements AfterViewInit {
 
   fidAll(): void {
     this.service.findAll().subscribe((resposta) => {
-      this.ordemServicos = resposta;
+      resposta.forEach(os => {
+        if (os.status == "ABERTA" || os.status == "EM ANDAMENTO") {
+          this.ordemServicos.push(os);
+        }
+      });
       this.getNameClientes();
       this.getNameTecnicos();
       this.dataSource = new MatTableDataSource<OrdemServico>(this.ordemServicos);
       this.dataSource.paginator = this.paginator;
     });
-  }
-
-  navigateToCreate(): void {
-    this.router.navigate(['ordem-servicos/create']);
   }
 
   getNameClientes(): void {

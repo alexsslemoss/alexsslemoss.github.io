@@ -1,5 +1,4 @@
 <form class="form mat-elevation-z8">
-  
   <h1>Nova Ordem de Serviço</h1>
 
   <mat-form-field appearance="fill">
@@ -14,9 +13,9 @@
   <mat-form-field appearance="fill">
     <mat-label>Selecione o Status</mat-label>
     <mat-select [(value)]="ordemServico.status">
-      <mat-option value="0">ABERTO</mat-option>
+      <mat-option value="0">ABERTA</mat-option>
       <mat-option value="1">EM ANDAMENTO</mat-option>
-      <mat-option value="2">ENDERRADO</mat-option>
+      <mat-option value="2">ENCERRADA</mat-option>
     </mat-select>
   </mat-form-field>
 
@@ -40,13 +39,27 @@
 
   <mat-form-field class="full-width" appearance="fill">
     <mat-label>Adicione as observações para a Ordem de Serviço</mat-label>
-    <textarea matInput [(ngModel)]="ordemServico.observacao" name="observacao"></textarea>
+    <textarea
+      matInput
+      [(ngModel)]="ordemServico.observacao"
+      name="observacao"
+    ></textarea>
   </mat-form-field>
 
-  <button (click)="create()" class="mat-elevation-z8" mat-stroked-button color="accent">
+  <button
+    (click)="create()"
+    class="mat-elevation-z8"
+    mat-stroked-button
+    color="accent"
+  >
     CRIAR
   </button>
-  <button (click)="cancel()" class="mat-elevation-z8" mat-stroked-button color="warn">
+  <button
+    (click)="cancel()"
+    class="mat-elevation-z8"
+    mat-stroked-button
+    color="warn"
+  >
     CANCELAR
   </button>
 </form>

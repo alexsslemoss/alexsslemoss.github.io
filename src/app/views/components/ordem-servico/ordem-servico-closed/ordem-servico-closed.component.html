@@ -1,13 +1,5 @@
 <div class="create">
-  <h1>Ordem de Serviços Todas</h1>
-  <button
-    (click)="navigateToCreate()"
-    class="mat-elevation-z8"
-    mat-stroked-button
-    color="accent"
-  >
-    CRIAR ORDDEM DE SERVIÇO
-  </button>
+  <h1>Ordem de Serviços Encerradas</h1>
 </div>
 
 <div class="mat-elevation-z8 container">
@@ -59,7 +51,7 @@
         <a routerLink="../update/{{ element.id }}">
           <i id="edit" class="material-icons">edit</i>
         </a>
-        <a routerLink="view/{{ element.id }}">
+        <a routerLink="../view/{{ element.id }}">
           <i id="delete" class="material-icons">Visibility</i>
         </a>
       </td>

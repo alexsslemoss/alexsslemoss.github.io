@@ -21,6 +21,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatMenuModule} from '@angular/material/menu';
 
 import { HeaderComponent } from './views/components/template/header/header.component';
 import { FooterComponent } from './views/components/template/footer/footer.component';
@@ -38,6 +39,8 @@ import { OrdemServicoReadComponent } from './views/components/ordem-servico/orde
 import { OrdemServicoCreateComponent } from './views/components/ordem-servico/ordem-servico-create/ordem-servico-create.component';
 import { OrdemServicoUpdateComponent } from './views/components/ordem-servico/ordem-servico-update/ordem-servico-update.component';
 import { OrdemServicoViewComponent } from './views/components/ordem-servico/ordem-servico-view/ordem-servico-view.component';
+import { OrdemServicoClosedComponent } from './views/components/ordem-servico/ordem-servico-closed/ordem-servico-closed.component';
+import { OrdemServicoOpenComponent } from './views/components/ordem-servico/ordem-servico-open/ordem-servico-open.component';
 
 
 @NgModule({
@@ -58,7 +61,9 @@ import { OrdemServicoViewComponent } from './views/components/ordem-servico/orde
     OrdemServicoReadComponent,
     OrdemServicoCreateComponent,
     OrdemServicoUpdateComponent,
-    OrdemServicoViewComponent
+    OrdemServicoViewComponent,
+    OrdemServicoClosedComponent,
+    OrdemServicoOpenComponent
   ],
   imports: [
     BrowserModule,
@@ -78,7 +83,8 @@ import { OrdemServicoViewComponent } from './views/components/ordem-servico/orde
     MatCardModule,
     MatTableModule,
     MatPaginatorModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -50,7 +50,7 @@ export class OrdemServicoUpdateComponent implements OnInit {
   update(): void {
     this.convertToUpdate();
     this.ordermServicoService.update(this.ordemServico).subscribe((resposta => {
-      this.router.navigate(['ordem-servicos'])
+      this.router.navigate(['ordem-servicos/read'])
       this.ordermServicoService.message("Ordem de Serviço atualizado com sucesso.")
     }),
       err => {
@@ -67,11 +67,11 @@ export class OrdemServicoUpdateComponent implements OnInit {
   }
 
   convertToUpdate(): void {
-    if (this.ordemServico.status == "ABERTO") {
+    if (this.ordemServico.status == "ABERTA") {
       this.ordemServico.status = 0;
     } else if (this.ordemServico.status == "ANDAMENTO") {
       this.ordemServico.status = 1;
-    } else if (this.ordemServico.status == "ENCERRADO") {
+    } else if (this.ordemServico.status == "ENCERRADA") {
       this.ordemServico.status = 2;
     }
 

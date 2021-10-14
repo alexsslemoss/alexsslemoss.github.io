@@ -38,7 +38,7 @@ export class OrdemServicoCreateComponent implements OnInit {
 
   create(): void {
     this.ordermServicoService.create(this.ordemServico).subscribe((resposta => {
-      this.router.navigate(['ordem-servicos'])
+      this.router.navigate(['ordem-servicos/read'])
       this.ordermServicoService.message('Ordem de Serviço criada com sucesso.')
     }),
       err => {
@@ -51,7 +51,7 @@ export class OrdemServicoCreateComponent implements OnInit {
   }
 
   cancel(): void {
-    this.router.navigate(['ordem-servicos']);
+    this.router.navigate(['ordem-servicos/read']);
   }
 
   getTecnicos(): void {

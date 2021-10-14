@@ -13,8 +13,15 @@
         <i class="material-icons">person_search</i>Cliente
       </a>
 
-      <a mat-list-item routerLink="ordem-servicos">
-        <i class="material-icons">person_pin</i>Ordem de Serviços
+      <a mat-list-item [matMenuTriggerFor]="menu">
+        <mat-menu #menu="matMenu">
+          <a routerLink="ordem-servicos/read" mat-menu-item>Todas</a>
+          <a routerLink="ordem-servicos/open" mat-menu-item
+            >Abertas ou Em Andamento</a
+          >
+          <a routerLink="ordem-servicos/closed" mat-menu-item>Encerradas</a>
+        </mat-menu>
+        <i class="material-icons">person_pin</i>Ordens de Serviço
       </a>
     </mat-nav-list>
   </mat-drawer>

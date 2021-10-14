@@ -1,3 +1,5 @@
+import { OrdemServicoOpenComponent } from './views/components/ordem-servico/ordem-servico-open/ordem-servico-open.component';
+import { OrdemServicoClosedComponent } from './views/components/ordem-servico/ordem-servico-closed/ordem-servico-closed.component';
 import { OrdemServicoViewComponent } from './views/components/ordem-servico/ordem-servico-view/ordem-servico-view.component';
 import { OrdemServicoUpdateComponent } from './views/components/ordem-servico/ordem-servico-update/ordem-servico-update.component';
 import { OrdemServicoCreateComponent } from './views/components/ordem-servico/ordem-servico-create/ordem-servico-create.component';
@@ -52,7 +54,7 @@ const routes: Routes = [
     component: ClienteDeleteComponent
   },
   {
-    path: 'ordem-servicos',
+    path: 'ordem-servicos/read',
     component: OrdemServicoReadComponent
   },
   {
@@ -66,6 +68,14 @@ const routes: Routes = [
   {
     path: 'ordem-servicos/view/:id',
     component: OrdemServicoViewComponent
+  },
+  {
+    path: 'ordem-servicos/open',
+    component: OrdemServicoOpenComponent
+  },
+  {
+    path: 'ordem-servicos/closed',
+    component: OrdemServicoClosedComponent
   }
 ];
 

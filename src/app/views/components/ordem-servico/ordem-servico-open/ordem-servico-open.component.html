@@ -1,13 +1,5 @@
 <div class="create">
-  <h1>Ordem de Serviços Todas</h1>
-  <button
-    (click)="navigateToCreate()"
-    class="mat-elevation-z8"
-    mat-stroked-button
-    color="accent"
-  >
-    CRIAR ORDDEM DE SERVIÇO
-  </button>
+  <h1>Ordem de Serviços Aberta ou Em Andamento</h1>
 </div>
 
 <div class="mat-elevation-z8 container">
@@ -20,11 +12,6 @@
     <ng-container matColumnDef="abertura">
       <th mat-header-cell *matHeaderCellDef>Data de Abertura</th>
       <td mat-cell *matCellDef="let element">{{ element.dataAbertura }}</td>
-    </ng-container>
-
-    <ng-container matColumnDef="encerramento">
-      <th mat-header-cell *matHeaderCellDef>Data de Fechamento</th>
-      <td mat-cell *matCellDef="let element">{{ element.dataFechamento }}</td>
     </ng-container>
 
     <ng-container matColumnDef="cliente">
@@ -56,7 +43,7 @@
     <ng-container matColumnDef="acoes">
       <th mat-header-cell *matHeaderCellDef>Ações</th>
       <td mat-cell *matCellDef="let element">
-        <a routerLink="../update/{{ element.id }}">
+        <a routerLink="update/{{ element.id }}">
           <i id="edit" class="material-icons">edit</i>
         </a>
         <a routerLink="view/{{ element.id }}">
